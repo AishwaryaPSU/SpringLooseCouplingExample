@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="mathCheat" class="io.itsagm.MathCheat"/>
+    <bean id="scienceCheat" class="io.itsagm.ScienceCheat"/>
+    <bean id="javaCheat" class="io.itsagm.JavaCheat"/>
+    <bean id="student" class="io.itsagm.JuniorStudent">
+        <property name="cheat" ref="javaCheat"/>
+    </bean>
+
+
+    <bean id="dataservice" class="io.example2.DataService"/>
+    <bean id="roamingservice" class="io.example2.RoamingService"/>
+    <bean id="airtel" class="io.example2.Airtel">
+        <property name="service" ref="dataservice"/>
+    </bean>
+</beans>
